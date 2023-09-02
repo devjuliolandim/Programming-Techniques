@@ -1,4 +1,4 @@
-package questoes;
+package PrimeiraLista;
 
 public class Ex18 {
 
