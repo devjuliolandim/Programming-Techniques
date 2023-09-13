@@ -1,0 +1,35 @@
+package SegundaLista;
+
+import java.util.Scanner;
+
+public class Ex06 {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		
+		int[] vetor = new int[3];
+		
+		System.out.println("Digite valores para o seu vetor");
+		
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.print("Valor " + (i+1)+ " ");
+			vetor[i] = scanner.nextInt();
+			
+		}
+		
+		
+		System.out.println("A cópia do seu vetor é: ");
+		
+		int[] vetorCopia = Utilidades.CopiarVetor(vetor);
+			
+		
+		for (int i = 0; i < vetorCopia.length; i++) {
+			System.out.print(vetorCopia[i]+" ");
+		}
+		
+		
+		scanner.close();
+	}
+
+}

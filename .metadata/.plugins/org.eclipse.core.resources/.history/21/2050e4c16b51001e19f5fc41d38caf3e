@@ -1,0 +1,121 @@
+package SegundaLista;
+
+public class Utilidades {
+
+	public static int somatorio(int[] array) {
+
+		int soma = 0;
+
+		for (int i = 0; i < array.length; i++) {
+
+			soma += array[i];
+
+		}
+
+		return soma;
+
+	}
+
+	public static void numererarpares(int a, int b) {
+
+		for (int i = a; i <= b; i++) {
+
+			if (i % 2 == 0) {
+
+				System.out.print(i + " ");
+
+			}
+
+		}
+
+	}
+
+	
+	public static void mediavetores(double[] vetA, double[] vetB) {
+		
+		double soma1 = 0;
+		double soma2 = 0;
+		
+		for (int i = 0; i < vetA.length; i++) {
+			soma1 += vetA[i];
+		}
+		
+		double media1 = soma1/vetA.length;
+		
+		System.out.println("A média do vetor A é: " + media1);
+		
+		
+		for (int i = 0; i < vetB.length; i++) {
+			soma2 += vetB[i];
+		}
+		
+		double media2 = soma2/vetB.length;
+		
+		System.out.println("A média do vetor B é: " + media2);
+		
+		
+		
+		
+	}
+	
+	
+	public static double mediaponderada(double[] notas, int[] pesos) {
+
+		double soma = 0;
+		
+		int somaPeso = 0;
+		
+		for (int i = 0; i < 3; i++) {
+			
+			soma += (notas[i] * pesos[i]);
+
+			somaPeso += pesos[i];
+			
+			
+		}
+		
+		
+		
+		double media = soma/somaPeso;
+		
+		
+		
+		return media;
+	}
+	
+	
+	public static int ContarQuantasVezes(int[] A, int[]B, int num) {
+		
+		int Quantidade = 0;
+		
+		for (int i = 0; i < A.length; i++) {
+			if(A[i] == num) {
+				
+				Quantidade++;
+			}
+		}
+		
+		for (int i = 0; i < B.length; i++) {
+			if(B[i] == num) {
+				
+				Quantidade++;
+			}
+		}
+		
+		return Quantidade;
+	}
+	
+	public static int[] CopiarVetor(int[] vetor) {
+		
+		int[] Copia = new int[vetor.length];
+		
+		
+		for (int i = 0; i < Copia.length; i++) {
+			Copia[i] = vetor[i];
+		}
+		
+		
+		return Copia;
+	}
+	
+}

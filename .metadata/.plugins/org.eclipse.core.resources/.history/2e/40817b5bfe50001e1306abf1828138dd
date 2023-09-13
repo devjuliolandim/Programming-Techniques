@@ -1,0 +1,63 @@
+package SegundaLista;
+
+public class Utilidades {
+
+	public static int somatorio(int[] array) {
+
+		int soma = 0;
+
+		for (int i = 0; i < array.length; i++) {
+
+			soma += array[i];
+
+		}
+
+		return soma;
+
+	}
+
+	public static void numererarpares(int a, int b) {
+
+		for (int i = a; i <= b; i++) {
+
+			if (i % 2 == 0) {
+
+				System.out.print(i + " ");
+
+			}
+
+		}
+
+	}
+
+	
+	public static void mediavetores(double[] vetA, double[] vetB) {
+		
+		double soma1 = 0;
+		double soma2 = 0;
+		
+		for (int i = 0; i < vetA.length; i++) {
+			soma1 += vetA[i];
+		}
+		
+		double media1 = soma1/vetA.length;
+		
+		System.out.println("A média do vetor A é: " + media1);
+		
+		
+		for (int i = 0; i < vetB.length; i++) {
+			soma2 += vetB[i];
+		}
+		
+		double media2 = soma2/vetB.length;
+		
+		System.out.println("A média do vetor B é: " + media2);
+		
+		
+		
+		
+	}
+	
+	
+	
+}

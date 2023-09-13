@@ -1,0 +1,44 @@
+package SegundaLista;
+
+import java.util.Scanner;
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		
+		double[] notas = new double[3];
+		
+		
+		System.out.println("Digite três notas");
+		
+		for(int i = 0; i < notas.length; i++) {
+		
+			System.out.print("Nota " + (i+1) + " ");
+			
+			notas[i]= scanner.nextDouble();
+			
+		}
+		
+		
+		
+		int[] pesos = new int[3];
+		
+		System.out.println("Digite três pesos");
+		
+		for (int i = 0; i < pesos.length; i++) {
+			pesos[i] = scanner.nextInt();
+		}
+		
+		scanner.close();
+		
+		
+		double media = Utilidades.mediaponderada(notas, pesos);
+		
+		System.out.println("Sua média ponderada é: " + media);
+		
+		
+	}
+
+}
