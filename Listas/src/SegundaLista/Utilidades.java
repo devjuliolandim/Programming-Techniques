@@ -1,7 +1,39 @@
 package SegundaLista;
 
+import java.util.Iterator;
+import java.util.Scanner;
+
 public class Utilidades {
 
+	public static int[] PovoarVetor(int[] vetor) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		
+		for (int i = 0; i < vetor.length; i++) {
+			
+			System.out.println("Valor " + (i+1));
+			vetor[i] = scanner.nextInt();
+			
+		}
+		
+		
+		
+		return vetor;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static int somatorio(int[] array) {
 
 		int soma = 0;
@@ -107,13 +139,31 @@ public class Utilidades {
 
 	public static int[] OrdenarVetor(int[] vetor) {
 
-		int[] VetorOrdenado = new int[vetor.length];
+		int n = vetor.length;
+		int[] VetorOrdenado = new int[n];
 
-		for (int i = 0; i < vetor.length; i++) {
+		System.arraycopy(vetor, 0, VetorOrdenado, 0, n);
 
-		}
+		boolean trocou;
 
-		return VetorOrdenado;
+		do {
+
+			trocou = false;
+			for (int i = 0; i < (n - 1); i++) {
+
+				if (VetorOrdenado[i] > VetorOrdenado[i + 1]) {
+
+					int temp = VetorOrdenado[i];
+					VetorOrdenado[i] = VetorOrdenado[i + 1];
+					VetorOrdenado[i + 1] = temp;
+					trocou = true;
+
+				}
+
+			}
+
+			return VetorOrdenado;
+		} while (trocou);
 	}
 
 	public static boolean VerificarOrdemCrescente(int[] vetor) {
@@ -144,4 +194,231 @@ public class Utilidades {
 
 	}
 
+	public static int EncontrarOKesimoMaior(int[] vetor, int K) {
+
+		// vetor de 5 espaços
+		// k = 1
+		int maior = 0;
+		int menor = 0;
+
+		for (int i = 0; i < vetor.length; i++) {
+
+		}
+
+		return K;
+	}
+
+	public static int EncontrarOKesimoMenor(int[] vetor, int K) {
+
+		return K;
+	}
+
+	public static boolean VerificarElementosDeVetores(int[] vetorA, int[] vetorB) {
+
+		int flag = 0;
+
+		for (int i = 0; i < vetorB.length; i++) {
+
+			if (vetorA[i] == vetorB[i]) {
+				flag++;
+			}
+
+		}
+
+		if (flag == 5) {
+
+			return true;
+		} else
+
+			return false;
+	}
+
+	public static int Potencia(int base, int expoente) {
+
+		if (expoente == 0) {
+
+			return 1;
+		}
+
+		int resultado = 1;
+
+		for (int i = 1; i <= expoente; i++) {
+
+			resultado *= base;
+
+		}
+
+		return resultado;
+	}
+
+	public static boolean VerificarSeEPrimo(int num) {
+
+		int primo = 0;
+
+		if (num == 1) {
+
+			return true;
+		}
+
+		for (int i = 1; i <= num; i++) {
+
+			if (num % i == 0) {
+
+				primo++;
+			}
+
+		}
+
+		if (primo == 2) {
+
+			return true;
+
+		} else
+
+			return false;
+	}
+	
+	
+	public static int[] BuscarPorOcorrencias(int[] vetA, int vetB[]) {
+		
+		int[] vetC = new int[5];
+		
+		int ocorrencias = 0;
+		
+		
+		// Vet A = {1, 4, 6, 2, 5}
+		// Vet B = {1, 1, 4, 5, 6}
+		
+		for (int i = 0; i < vetA.length; i++) {
+			for (int j = 0; j < vetB.length; j++) {
+				if(vetA[i] == vetB[j]) {
+					
+					
+					
+					ocorrencias++;
+				}
+				
+				
+			}
+		}
+		
+		
+		return vetC;
+	}
+	
+	
+	
+	public static int[] remocaoDeElemento(int[] vetA, int num) {
+		
+		int size = 0;
+		
+		
+		for (int i = 0; i < vetA.length; i++) {
+			if(vetA[i] != num) {
+				size++;
+			}
+		}
+		
+		
+		int[] vetB = new int[size];
+		int j = 0;
+		
+		for (int i = 0; i < vetA.length; i++) {
+			if(vetA[i] != num) {
+				vetB[j] = vetA[i];
+				j++;
+			}
+		}
+		
+		
+		return vetB;
+	}
+	
+	
+	public static boolean palindromo(String nome) {
+		
+		nome = nome.replaceAll("\\s", "").toLowerCase();
+		
+		int esquerda = 0;
+		int direita = nome.length() - 1;
+		
+		while(esquerda < direita){
+			
+			
+			if(nome.charAt(esquerda) != nome.charAt(direita)){
+				return false;
+			}
+			
+			esquerda++;
+			direita--;
+			
+		}	
+		return true;
+	}
+	
+	public static String inversaoDeString(String nome) {
+		
+		char[] caracteres = nome.toCharArray();
+		int esquerda = 0;
+		int direita = caracteres.length - 1;
+		
+		while(esquerda < direita) {
+			
+			char temp = caracteres[esquerda];
+			caracteres[esquerda] = caracteres[direita];
+			caracteres[direita] = temp;
+		
+			
+			esquerda++;
+			direita--;
+			
+			
+			
+		}
+		
+		
+		return new String(caracteres);
+	}
+	
+
+	
+	public static boolean verificarNumeroPerfeito(int num) {
+		
+		//6 pois = 1 + 2 + 3 = 6
+		
+		int soma = 0;
+		
+		
+		for (int i = 1; i <= num/2; i++) {
+			
+			if(num%i==0) {
+				
+				soma += i;
+			}
+		}
+		
+		
+		return soma == num;
+		
+
+	}
+	
+	public static int[] criacaoDeVetor(int[] vet) {
+		
+		int[] novoVetor = new int[vet.length];
+		
+		for (int i = novoVetor.length; i > 0; i--) {
+			
+			novoVetor[i - 1] = i;
+			
+		}
+		
+		
+		
+		
+		return novoVetor;
+	}
+	
+	
+	
 }
